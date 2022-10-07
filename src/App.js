@@ -24,6 +24,14 @@ const completeTodo = index => {
   setTodos(newTodos);
 }
 
+// DELETE TODOS
+
+const removeTodo = index => {
+  const newTodos = [...todos];
+  newTodos.splice(index,1);
+  setTodos(newTodos);
+};
+
 
   return (
     <div className="App">
@@ -34,6 +42,7 @@ const completeTodo = index => {
           index={index}
           todo={todo}
           completeTodo={completeTodo}
+          removeTodo={removeTodo}
           />
       ))}
       <TodoForm addTodo={addTodo}/>
